@@ -1,3 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse:collapse ;
+            font-family: arial;
+            width: 60%;
+        }
+        td, th{
+            border:1px solid gray;
+            text-align: center;
+            padding: 10px;
+        }
+        #tieu_de{
+            text-align: center;
+            background-color: #4f81bd;
+            color: white;
+        }
+        tr:nth-child(odd){
+            background-color: #dce6f1;
+        }
+        /* tr:nth-child(even){
+            background-color: red;
+        } */
+    </style>
+</head>
+<body>
 <?php
 require 'connect.php'; 
 if(isset($_GET['origin'])) {
@@ -7,7 +38,7 @@ if(isset($_GET['origin'])) {
     if ($resurl->num_rows > 0) {
         echo "<h2>" . "Các chuyến bay" . "</h2>";
     echo "<table>";
-        echo "<tr>";
+        echo "<tr id='tieu_de'>";
             echo "<th>" . "ID" . "</th>";
             echo "<th>" . "ORIGIN" . "</th>";
             echo "<th>" . "DESTINATION" . "</th>";
@@ -27,5 +58,6 @@ if(isset($_GET['origin'])) {
     echo "</table>"; 
     }
 }
-
-?>
+?>    
+</body>
+</html>
